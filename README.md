@@ -96,7 +96,7 @@ plt.show()
 
 假設我們有一組觀測數據 $\{x_1, x_2, \ldots, x_n\}$，這些數據由某個參數為 $\theta$ 的概率分布生成。似然函數 $L(\theta)$ 定義為在參數 $\theta$ 下觀測數據的聯合概率密度函數：
 
-$L(\theta) = P(x_1, x_2, \ldots, x_n | \theta) = \prod_{i=1}^{n} P(x_i | \theta)$
+$$L(\theta) = P(x_1, x_2, \ldots, x_n | \theta) = \prod_{i=1}^{n} P(x_i | \theta)$$
 
 其中，$P(x_i | \theta)$ 是在參數 $\theta$ 下，數據 $x_i$ 的概率。
 
