@@ -199,7 +199,7 @@ def sigmoid(z):
 
 伯努利分布的概率質量函數，表示隨機變量 $ X $ 取值為 $ x $ 的概率。公式如下：
 
-$ f_{X}(x) = p^{x}(1-p)^{1-x} = \left\{ \begin{matrix} p & \text{if } x = 1, \\ 1-p & \text{if } x = 0. \end{matrix} \right. $
+$$f_{X}(x) = p^{x}(1-p)^{1-x} = \left\{ \begin{matrix} p & \text{if } x = 1, \\ 1-p & \text{if } x = 0. \end{matrix} \right.$$
 
 在這個公式中：
 - $ x $ 是隨機變量 $ X $ 的取值，且 $ x $ 只能取0或1。具體來說：
@@ -210,7 +210,7 @@ $ f_{X}(x) = p^{x}(1-p)^{1-x} = \left\{ \begin{matrix} p & \text{if } x = 1, \\ 
 
 伯努利分布用於描述只有兩個可能結果（通常稱為 "成功" 和 "失敗" 或 1 和 0）的隨機事件。其概率質量函數定義如下：
 
-$ P(X = x) = \left\{ \begin{matrix} p & \text{if } x = 1, \\ 1-p & \text{if } x = 0. \end{matrix} \right. $
+$$P(X = x) = \left\{ \begin{matrix} p & \text{if } x = 1, \\ 1-p & \text{if } x = 0. \end{matrix} \right.$$
 
 - $ p $ 是事件成功（即 $ X = 1 $）的概率。
 - $ 1-p $ 是事件失敗（即 $ X = 0 $）的概率。
@@ -218,12 +218,12 @@ $ P(X = x) = \left\{ \begin{matrix} p & \text{if } x = 1, \\ 1-p & \text{if } x 
 ### 在邏輯回歸中的應用
 在邏輯回歸中，給定模型參數 $\mathbf{W}$
 和 $\mathbf{b}$，樣本 $i$ 的預測概率為：
-$ \hat{y}_i = \sigma(\hat{\mathbf{W}} \cdot \hat{\mathbf{X}_i} + \hat{b}) = \frac{1}{1 + e^{-(\hat{\mathbf{W}} \cdot \hat{\mathbf{X}_i} + \hat{b})}} $
+$$\hat{y}_i = \sigma(\hat{\mathbf{W}} \cdot \hat{\mathbf{X}_i} + \hat{b}) = \frac{1}{1 + e^{-(\hat{\mathbf{W}} \cdot \hat{\mathbf{X}_i} + \hat{b})}}$$
 
-這裡，$\sigma(z)$ 是 Sigmoid 函數。
+這裡， $\sigma(z)$ 是 Sigmoid 函數。
 
 負對數似然損失函數（Negative Log-Likelihood Loss）可以表示為：
-$ L(\mathbf{W}, b) = -\frac{1}{m} \sum_{i=1}^m \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right] $
+$$L(\mathbf{W}, b) = -\frac{1}{m} \sum_{i=1}^m \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]$$
 
 其中：
 - $m$ 是樣本數
@@ -243,16 +243,16 @@ loss = - (1 / self.m) * np.sum(self.y * np.log(y_pred) + (1 - self.y) * np.log(1
 ### 更新權重的數學公式
 
 對於權重 $\mathbf{W}$ 和偏置 $b$，我們使用梯度下降來更新它們。具體的更新公式如下：
-$ \mathbf{W} \leftarrow \mathbf{W} - \alpha \frac{\partial L}{\partial \mathbf{W}} $
-$ b \leftarrow b - \alpha \frac{\partial L}{\partial b} $
+$$\mathbf{W} \leftarrow \mathbf{W} - \alpha \frac{\partial L}{\partial \mathbf{W}}$$
+$$b \leftarrow b - \alpha \frac{\partial L}{\partial b}$$
 
 其中：
 - $\alpha$ 是學習率
 - $\frac{\partial L}{\partial \mathbf{W}}$ 和 $\frac{\partial L}{\partial b}$ 是損失函數對權重和偏置的梯度
 
 這些梯度的計算公式為：
-$ \frac{\partial L}{\partial \mathbf{W}} = \frac{1}{m} \sum_{i=1}^m (\hat{y}_i - y_i) \mathbf{X}_i $
-$ \frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^m (\hat{y}_i - y_i) $
+$$\frac{\partial L}{\partial \mathbf{W}} = \frac{1}{m} \sum_{i=1}^m (\hat{y}_i - y_i) \mathbf{X}_i$$
+$$\frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^m (\hat{y}_i - y_i)$$
 
 這些公式在代碼中被實現如下：
 ```python
