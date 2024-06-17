@@ -96,43 +96,43 @@ plt.show()
 
 假設我們有一組觀測數據 $\{x_1, x_2, \ldots, x_n\}$，這些數據由某個參數為 $\theta$ 的概率分布生成。似然函數 $L(\theta)$ 定義為在參數 $\theta$ 下觀測數據的聯合概率密度函數：
 
-$ L(\theta) = P(x_1, x_2, \ldots, x_n | \theta) = \prod_{i=1}^{n} P(x_i | \theta) $
+$L(\theta) = P(x_1, x_2, \ldots, x_n | \theta) = \prod_{i=1}^{n} P(x_i | \theta)$
 
 其中，$P(x_i | \theta)$ 是在參數 $\theta$ 下，數據 $x_i$ 的概率。
 
 MLE 試圖找到參數 $\theta$ 的估計值 $\hat{\theta}$，使得似然函數 $L(\theta)$ 最大化：
 
-$ \hat{\theta} = \arg \max_{\theta} L(\theta) $
+$\hat{\theta} = \arg \max_{\theta} L(\theta)$
 
 由於對數函數是單調遞增的，為了簡化計算，我們通常最大化對數似然函數（Log-Likelihood Function），即：
 
-$ \ell(\theta) = \log L(\theta) = \sum_{i=1}^{n} \log P(x_i | \theta) $
+$\ell(\theta) = \log L(\theta) = \sum_{i=1}^{n} \log P(x_i | \theta)$
 
 因此，MLE 的估計值 $\hat{\theta}$ 也可以表示為：
 
-$ \hat{\theta} = \arg \max_{\theta} \ell(\theta) $
+$\hat{\theta} = \arg \max_{\theta} \ell(\theta)$
 
 ### 在邏輯回歸中的應用
 
 在邏輯回歸中，我們假設輸出變量 $y$ 服從伯努利分布，其概率由輸入特征 $X$ 的線性組合通過 Sigmoid 函數轉換而來：
 
-$ P(y = 1 | X, \theta) = \sigma(X \cdot \theta) = \frac{1}{1 + e^{-(X \cdot \theta)}} $
+$P(y = 1 | X, \theta) = \sigma(X \cdot \theta) = \frac{1}{1 + e^{-(X \cdot \theta)}}$
 
 這里，$\theta$ 是我們需要估計的參數，包括權重和偏置。
 
 對於給定的訓練數據集 $\{(X_i, y_i)\}$，邏輯回歸模型的似然函數為：
 
-$ L(\theta) = \prod_{i=1}^{m} P(y_i | X_i, \theta) = \prod_{i=1}^{m} \sigma(X_i \cdot \theta)^{y_i} (1 - \sigma(X_i \cdot \theta))^{1 - y_i} $
+$L(\theta) = \prod_{i=1}^{m} P(y_i | X_i, \theta) = \prod_{i=1}^{m} \sigma(X_i \cdot \theta)^{y_i} (1 - \sigma(X_i \cdot \theta))^{1 - y_i}$
 
 其對數似然函數為：
 
-$ \ell(\theta) = \sum_{i=1}^{m} \left[ y_i \log(\sigma(X_i \cdot \theta)) + (1 - y_i) \log(1 - \sigma(X_i \cdot \theta)) \right] $
+$\ell(\theta) = \sum_{i=1}^{m} \left[ y_i \log(\sigma(X_i \cdot \theta)) + (1 - y_i) \log(1 - \sigma(X_i \cdot \theta)) \right]$
 
 為了最大化對數似然函數，我們可以使用梯度下降法，通過叠代更新參數 $\theta$ 來找到使對數似然函數最大化的參數值。
 
 在梯度下降中，參數更新公式為：
 
-$ \theta \leftarrow \theta + \alpha \frac{\partial \ell(\theta)}{\partial \theta} $
+$\theta \leftarrow \theta + \alpha \frac{\partial \ell(\theta)}{\partial \theta}$
 
 這里，$\alpha$ 是學習率，$\frac{\partial \ell(\theta)}{\partial \theta}$ 是對數似然函數對參數 $\theta$ 的梯度。
 
