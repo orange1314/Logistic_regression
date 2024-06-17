@@ -126,7 +126,7 @@ $L(\theta) = \prod_{i=1}^{m} P(y_i | X_i, \theta) = \prod_{i=1}^{m} \sigma(X_i \
 
 其對數似然函數為：
 
-$\ell(\theta) = \sum_{i=1}^{m} \left[ y_i \log(\sigma(X_i \cdot \theta)) + (1 - y_i) \log(1 - \sigma(X_i \cdot \theta)) \right]$
+$$\ell(\theta) = \sum_{i=1}^{m} \left[ y_i \log(\sigma(X_i \cdot \theta)) + (1 - y_i) \log(1 - \sigma(X_i \cdot \theta)) \right]$$
 
 為了最大化對數似然函數，我們可以使用梯度下降法，通過叠代更新參數 $\theta$ 來找到使對數似然函數最大化的參數值。
 
