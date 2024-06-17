@@ -253,7 +253,8 @@ $$b \leftarrow b - \alpha \frac{\partial L}{\partial b}$$
 這些梯度的計算公式為：
 
 $$\frac{\partial L}{\partial \mathbf{W}} = \frac{1}{m} \sum_ {i=1}^m (\hat{y}_ i - y_ i) \mathbf{X}_ i$$
-$$\frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^m (\hat{y}_i - y_i)$$
+
+$$\frac{\partial L}{\partial b} = \frac{1}{m} \sum_ {i=1}^m (\hat{y}_ i - y_ i)$$
 
 這些公式在代碼中被實現如下：
 ```python
