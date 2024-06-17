@@ -10,7 +10,7 @@
 ### 2. 轉換函數
 邏輯回歸使用邏輯函數（Logistic Function）或稱為S型函數（Sigmoid Function）將線性回歸的輸出轉換為概率值。邏輯函數的數學表達式為：
 $\sigma(z) = \frac{1}{1 + e^{-z}}$
-其中， $z = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_n X_n$ 是線性組合，$\beta_i$ 是模型的參數。
+其中， $z = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_n X_n$ 是線性組合，$\beta_i$是模型的參數。
 
 ### 3. 預測概率
 通過邏輯函數，我們可以將線性組合轉換為目標變量為1的概率：
