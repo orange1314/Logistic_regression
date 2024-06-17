@@ -255,7 +255,9 @@ $$
 \frac{\partial L}{\partial \mathbf{W}} = \frac{1}{m} \sum_{i=1}^m (\hat{y}_i - y_i) \mathbf{X}_i
 $$
 
-$$\frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^m (\hat{y}_i - y_i)$$
+$$
+\frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^m (\hat{y}_i - y_i)
+$$
 
 這些公式在代碼中被實現如下：
 ```python
