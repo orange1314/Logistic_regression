@@ -106,7 +106,7 @@ $\hat{\theta} = \arg \max_{\theta} L(\theta)$
 
 由於對數函數是單調遞增的，為了簡化計算，我們通常最大化對數似然函數（Log-Likelihood Function），即：
 
-$\ell(\theta) = \log L(\theta) = \sum_{i=1}^{n} \log P(x_i | \theta)$
+$$\ell(\theta) = \log L(\theta) = \sum_{i=1}^{n} \log P(x_i | \theta)$$
 
 因此，MLE 的估計值 $\hat{\theta}$ 也可以表示為：
 
@@ -116,13 +116,13 @@ $\hat{\theta} = \arg \max_{\theta} \ell(\theta)$
 
 在邏輯回歸中，我們假設輸出變量 $y$ 服從伯努利分布，其概率由輸入特征 $X$ 的線性組合通過 Sigmoid 函數轉換而來：
 
-$P(y = 1 | X, \theta) = \sigma(X \cdot \theta) = \frac{1}{1 + e^{-(X \cdot \theta)}}$
+$$P(y = 1 | X, \theta) = \sigma(X \cdot \theta) = \frac{1}{1 + e^{-(X \cdot \theta)}}$$
 
 這里，$\theta$ 是我們需要估計的參數，包括權重和偏置。
 
 對於給定的訓練數據集 $\{(X_i, y_i)\}$，邏輯回歸模型的似然函數為：
 
-$L(\theta) = \prod_{i=1}^{m} P(y_i | X_i, \theta) = \prod_{i=1}^{m} \sigma(X_i \cdot \theta)^{y_i} (1 - \sigma(X_i \cdot \theta))^{1 - y_i}$
+$$L(\theta) = \prod_{i=1}^{m} P(y_i | X_i, \theta) = \prod_{i=1}^{m} \sigma(X_i \cdot \theta)^{y_i} (1 - \sigma(X_i \cdot \theta))^{1 - y_i}$$
 
 其對數似然函數為：
 
@@ -132,9 +132,9 @@ $$\ell(\theta) = \sum_{i=1}^{m} \left[ y_i \log(\sigma(X_i \cdot \theta)) + (1 -
 
 在梯度下降中，參數更新公式為：
 
-$\theta \leftarrow \theta + \alpha \frac{\partial \ell(\theta)}{\partial \theta}$
+$$\theta \leftarrow \theta + \alpha \frac{\partial \ell(\theta)}{\partial \theta}$$
 
-這里，$\alpha$ 是學習率，$\frac{\partial \ell(\theta)}{\partial \theta}$ 是對數似然函數對參數 $\theta$ 的梯度。
+這里，$\alpha$ 是學習率， $\frac{\partial \ell(\theta)}{\partial \theta}$ 是對數似然函數對參數 $\theta$ 的梯度。
 
 # 版本一 手刻一個MLE的邏輯回歸
 
