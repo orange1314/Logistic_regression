@@ -118,7 +118,7 @@ $\hat{\theta} = \arg \max_{\theta} \ell(\theta)$
 
 $$P(y = 1 | X, \theta) = \sigma(X \cdot \theta) = \frac{1}{1 + e^{-(X \cdot \theta)}}$$
 
-這里，$\theta$ 是我們需要估計的參數，包括權重和偏置。
+這里， $\theta$ 是我們需要估計的參數，包括權重和偏置。
 
 對於給定的訓練數據集 $\{(X_i, y_i)\}$，邏輯回歸模型的似然函數為：
 
@@ -134,7 +134,7 @@ $$\ell(\theta) = \sum_{i=1}^{m} \left[ y_i \log(\sigma(X_i \cdot \theta)) + (1 -
 
 $$\theta \leftarrow \theta + \alpha \frac{\partial \ell(\theta)}{\partial \theta}$$
 
-這里，$\alpha$ 是學習率， $\frac{\partial \ell(\theta)}{\partial \theta}$ 是對數似然函數對參數 $\theta$ 的梯度。
+這里， $\alpha$ 是學習率， $\frac{\partial \ell(\theta)}{\partial \theta}$ 是對數似然函數對參數 $\theta$ 的梯度。
 
 # 版本一 手刻一個MLE的邏輯回歸
 
