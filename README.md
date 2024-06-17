@@ -98,7 +98,7 @@ plt.show()
 
 $$L(\theta) = P(x_1, x_2, \ldots, x_n | \theta) = \prod_{i=1}^{n} P(x_i | \theta)$$
 
-其中，$P(x_i | \theta)$ 是在參數 $\theta$ 下，數據 $x_i$ 的概率。
+其中， $P(x_i | \theta)$ 是在參數 $\theta$ 下，數據 $x_i$ 的概率。
 
 MLE 試圖找到參數 $\theta$ 的估計值 $\hat{\theta}$，使得似然函數 $L(\theta)$ 最大化：
 
